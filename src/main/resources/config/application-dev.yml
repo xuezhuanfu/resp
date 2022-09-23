@@ -1,0 +1,12 @@
+server:
+  port: 8080
+test:
+  hello: hellowrod21
+
+#数据库连接配置
+spring.datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/wiki?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+  username: wiki
+  password: 123456
+
