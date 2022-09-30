@@ -1,4 +1,4 @@
-package com.jiawa.wiki.user.domain;
+package com.jiawa.wiki.domain;
 
 public class User {
     private int id;

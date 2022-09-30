@@ -10,7 +10,7 @@ import org.springframework.core.env.Environment;
 
 @ComponentScan("com.jiawa")
 @SpringBootApplication
-@MapperScan("com.jiawa.wiki.user.mapper")
+@MapperScan("com.jiawa.wiki.mapper")
 public class WikiApplication {
 	private static final Logger LOG = LoggerFactory.getLogger(WikiApplication.class);
 		public static void main(String[] args) {

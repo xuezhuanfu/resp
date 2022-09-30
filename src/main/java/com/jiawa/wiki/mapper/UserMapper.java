@@ -1,6 +1,7 @@
-package com.jiawa.wiki.user.mapper;
+package com.jiawa.wiki.mapper;
 
 import org.apache.catalina.User;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 

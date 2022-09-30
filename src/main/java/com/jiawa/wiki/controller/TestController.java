@@ -1,7 +1,7 @@
-package com.jiawa.wiki.user.ctrl;
+package com.jiawa.wiki.controller;
 
-import com.jiawa.wiki.user.domain.User;
-import com.jiawa.wiki.user.service.UserService;
+import com.jiawa.wiki.domain.User;
+import com.jiawa.wiki.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,5 +32,10 @@ public class TestController {
     @GetMapping(value = "testList")
     public List<User> testList(){
         return userService.test();
+    }
+
+    @GetMapping(value = "testDemoList")
+    public List<User> testDemoList(){
+        return userService.testDemo();
     }
 }
