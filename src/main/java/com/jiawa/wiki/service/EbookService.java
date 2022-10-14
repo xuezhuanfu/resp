@@ -1,9 +1,10 @@
 package com.jiawa.wiki.service;
 
-import com.jiawa.wiki.domain.Ebook;
+import com.jiawa.wiki.req.EbookVo;
+import com.jiawa.wiki.resp.EbookResp;
 
 import java.util.List;
 
 public interface EbookService {
-    List<Ebook> list();
+    List<EbookResp> list(EbookVo vo);
 }
