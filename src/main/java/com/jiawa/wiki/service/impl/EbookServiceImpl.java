@@ -6,6 +6,7 @@ import com.jiawa.wiki.mapper.EbookMapper;
 import com.jiawa.wiki.req.EbookVo;
 import com.jiawa.wiki.resp.EbookResp;
 import com.jiawa.wiki.service.EbookService;
+import com.jiawa.wiki.util.CopyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,14 +25,8 @@ public class EbookServiceImpl implements EbookService {
         EbookExample ebookExample = new EbookExample();
         EbookExample.Criteria create = ebookExample.createCriteria();
         create.andNameLike("%"+vo.getName()+"%");
-
-        List<EbookResp> ebookResps = new ArrayList<>();
         List<Ebook> list = ebookMapper.selectByExample(ebookExample);
-        for (Ebook ebook : list){
-            EbookResp ebookResp = new EbookResp();
-            BeanUtils.copyProperties(ebook,ebookResp);
-            ebookResps.add(ebookResp);
-        }
+        List<EbookResp> ebookResps = CopyUtil.copyList(list,EbookResp.class);
         return ebookResps;
     }
 }
