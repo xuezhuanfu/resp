@@ -2,6 +2,8 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <a-button type="dashed">Dashed Button</a-button>
+    <a-button type="text">Text Button</a-button>
   </div>
 </template>
 
