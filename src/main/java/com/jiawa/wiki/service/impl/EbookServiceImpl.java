@@ -24,7 +24,6 @@ public class EbookServiceImpl implements EbookService {
     public List<EbookResp> list(EbookVo vo) {
         EbookExample ebookExample = new EbookExample();
         EbookExample.Criteria create = ebookExample.createCriteria();
-        create.andNameLike("%"+vo.getName()+"%");
         List<Ebook> list = ebookMapper.selectByExample(ebookExample);
         List<EbookResp> ebookResps = CopyUtil.copyList(list,EbookResp.class);
         return ebookResps;
