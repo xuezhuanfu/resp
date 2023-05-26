@@ -10,6 +10,8 @@ import com.jiawa.wiki.util.CopyUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,9 @@ public class EbookServiceImpl implements EbookService {
     public List<EbookResp> list(EbookVo vo) {
         EbookExample ebookExample = new EbookExample();
         EbookExample.Criteria create = ebookExample.createCriteria();
+        if(!ObjectUtils.isEmpty(vo.getName())){
+            create.andNameLike("%"+vo.getName()+"%");
+        }
         List<Ebook> list = ebookMapper.selectByExample(ebookExample);
         List<EbookResp> ebookResps = CopyUtil.copyList(list,EbookResp.class);
         return ebookResps;
